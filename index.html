@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dadii - The Fake Data APIs</title>
+
+    <!-- font awesome code  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css style code  -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f1f1ff;
+        }
+
+        header {
+            height: 10vh;
+            background-color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 0px 5px #4444448e;
+            position: sticky;
+            width: 100%;
+            top: 0;
+        }
+
+        header li {
+            display: inline-block;
+            margin-left: 1rem;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #444;
+            position: relative;
+        }
+
+        header a::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            background-color: #444;
+            position: absolute;
+            left: 50%;
+            bottom: -6px;
+            transform: translate(-50%, -50%);
+            transition: all .5s ease;
+        }
+
+        header a:hover::after {
+            width: 100%;
+        }
+
+        .logo {
+            color: #444;
+        }
+
+        .logo-icon {
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            margin: auto;
+            border-radius: 50%;
+            border: 1px solid #444;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 90vh;
+            background-color: #fff;
+        }
+
+        .text-box {
+            width: 40%;
+            text-align: center;
+        }
+
+        .text-box h1 {
+            font-size: 4rem;
+        }
+
+        .text-box h1 .fn {
+            font-weight: 300;
+        }
+
+        .text-box button {
+            height: 40px;
+            border-radius: 40px;
+            padding: 0 2rem;
+            margin-top: 1rem;
+            border: none;
+            outline: none;
+            background-color: #222;
+            color: #fff;
+            cursor: pointer;
+            transition: all .5s ease;
+        }
+
+        .text-box button:hover {
+            background-color: #111;
+        }
+
+        .img-box {
+            width: 40%;
+        }
+
+        .img-box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .hero .img-box {
+            width: 35%;
+            box-shadow: 5px 5px 0px #444;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+
+        /* ------------------------  */
+        .container {
+            min-height: 90vh;
+            background-color: #fff;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .lg-heading {
+            font-size: 3rem;
+            color: #444;
+        }
+
+        .para {
+            font-size: 20px;
+            color: #444;
+            margin: 1rem 0;
+        }
+
+        .bg-gray {
+            background-color: #f1f1ff;
+        }
+
+        .container .img-box {
+            margin: auto;
+            width: 40%;
+        }
+
+
+
+        .api-lists {
+            text-align: start;
+            padding: 2rem;
+            color: #444;
+
+        }
+
+        .api-lists h2 {
+            font-size: 2.5rem;
+        }
+
+        .text-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .list {
+            width: 40%;
+            margin-top: 1rem;
+            padding: .5rem 1rem;
+            box-shadow: 5px 5px 0px #444;
+            border: 1px solid #444;
+            border-radius: 5px;
+        }
+
+        .list .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            padding: .5rem 0;
+        }
+
+        .row a {
+            color: #222;
+        }
+
+        .col {
+            text-align: start;
+            width: 48%;
+        }
+
+        .quote {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url("https://www.scrolldroll.com/wp-content/uploads/2019/07/Bhagavad-Gita-Quotes-1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* -----------------------------  */
+
+        footer {
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+
+        /* 0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+0+  */
+
+        /* media quiry  */
+        @media screen and (max-width:480px) {
+            .hero {
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+            }
+
+            .text-box {
+                width: 95%;
+            }
+
+            .text-box h1 {
+                font-size: 2rem;
+            }
+
+            .text-box button {
+                width: 60%;
+            }
+
+            .hero .img-box {
+                width: 80%;
+                margin-top: 2rem;
+            }
+
+            /* *********************  */
+            .container {
+                width: 95%;
+            }
+
+            .lg-heading {
+                font-size: 2rem;
+            }
+
+            .para {
+                font-size: 18px;
+            }
+
+            .container .img-box {
+                margin: auto;
+                width: 80%;
+            }
+.container{
+    width: 100%;
+}
+.api-lists{
+    width: 95%;
+}
+            .api-lists h2 {
+                font-size: 1.8rem;
+            }
+
+            .text-wrapper{
+                flex-direction: column;
+            }
+
+            .list{
+                width: 95%;
+                border: 1px solid ;
+
+            }
+            .list .row{
+                width: 100%;
+                border: 1px solid ;
+            }
+
+            .quote {
+            width: 200px;
+            height: 200px;
+            margin-top: 2rem;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header  -->
+    <header>
+        <h3 class="logo"> <span class="logo-icon"><i class="fa-solid fa-glasses"></i></span> <span
+                class="fn">Dadii</span></h3>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">GitHub</a></li>
+        </ul>
+    </header>
+
+    <!-- hero section -->
+    <div class="hero">
+        <div class="text-box">
+            <h1> <span class="fn">Dadii</span><span class="ln">JSON</span> </h1>
+            <p>Get dummy/fake JSON data to use as placeholder in development or in prototype testing.</p>
+
+            <div class="btn-group">
+                <button>View on GitHub</button>
+                <button>Read Docs</button>
+            </div>
+        </div>
+        <div class="img-box">
+            <img src="https://miro.medium.com/v2/resize:fit:1358/1*xOELk_XpewXA7u_ffGevCA.gif"
+                alt="this is student gif.">
+
+        </div>
+    </div>
+
+
+
+    <!-- container -- 01  -->
+    <div class="container bg-gray">
+        <h1 class="lg-heading">Resources</h1>
+        <p class="para">Dadii comes with different sets of common resources:</p>
+
+        <div class="api-lists">
+            <h2>Resources</h2>
+            <p>Following resources are available which you can access via our REST API.</p>
+
+            <div class="text-wrapper">
+
+                <div class="list">
+                    <div class="row">
+                        <div class="col"><a target="_blank" href="/products">/products</a></div>
+                        <div class="col"><span>100 products</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><a target="_blank" href="/carts">/carts</a></div>
+                        <div class="col"><span>20 carts</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><a target="_blank" href="/users">/users</a></div>
+                        <div class="col"><span>100 users</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><a target="_blank" href="/posts">/posts</a></div>
+                        <div class="col"><span>150 posts</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><a target="_blank" href="/comments">/comments</a></div>
+                        <div class="col"><span>340 comments</span></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col"><a target="_blank" href="/quotes">/quotes</a></div>
+                        <div class="col"><span>100 quotes</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><a target="_blank" href="/todos">/todos</a></div>
+                        <div class="col"><span>150 todos</span></div>
+                    </div>
+                </div>
+
+
+                <div class="quote">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- footer  -->
+    <footer>
+        <div>
+            <p>&copy; Dadii 👩‍🦳 </p>
+            <p>Made With 💖 By Rajdev Yadav</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>
